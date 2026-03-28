@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inovation_ib/pages/Articles.dart';
 import 'package:inovation_ib/pages/HomePage.dart';
+import 'package:inovation_ib/services/Products.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
            scaffoldBackgroundColor: Colors.grey[300],
          ),
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: ProductListPage(),
           initialRoute: '/',
           routes: {
             '/about': (context) => Articles(),
