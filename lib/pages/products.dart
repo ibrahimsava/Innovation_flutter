@@ -22,7 +22,9 @@ class _ProductListPageState extends State<ProductListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center( child:  Text('Produits'))),
+      appBar: AppBar(
+          title: Center(
+              child:  Text('Produits'))),
       body: FutureBuilder<List<Product>>(
         future: products,
         builder: (context, snapshot) {
@@ -31,7 +33,8 @@ class _ProductListPageState extends State<ProductListPage> {
           if (snapshot.hasError)
             return Center(child: Text('Erreur : ${snapshot.error}'));
           final items = snapshot.data ?? [];
-          if (items.isEmpty) return Center(child: Text('Aucun produit'));
+          if (items.isEmpty) return Center(
+              child: Text('Aucun produit'));
           return ListView.builder(
             itemCount: items.length,
             itemBuilder: (context, i) {
