@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inovation_ib/pages/Articles.dart';
 import 'package:inovation_ib/pages/HomePage.dart';
-import 'package:inovation_ib/services/Products.dart';
+import 'package:inovation_ib/pages/products.dart';
 
 void main() {
   runApp(const MyApp());

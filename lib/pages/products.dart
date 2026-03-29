@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'api_services.dart';
+import 'package:inovation_ib/services/api_services.dart';
 import 'package:inovation_ib/Models/Product.dart';
-
-
 
 class ProductListPage extends StatefulWidget {
   const ProductListPage({super.key});
@@ -42,18 +40,18 @@ class _ProductListPageState extends State<ProductListPage> {
                 title: Text(p.name),
                 subtitle: Text(p.description),
                 trailing: Text('${p.price.toStringAsFixed(2)} €'),
-                  leading: p.imageUrl != null
-                      ?
-                 Image.network(
-                    p.imageUrl!,
-                    width: 50,
-                    errorBuilder: (
-                        context,
-                        error,
-                        stackTrace
-                        ) => Icon(Icons.broken_image),
-                  )
-                      : const Icon(Icons.image),
+                leading: p.imageUrl != null
+                    ?
+                Image.network(
+                  p.imageUrl!,
+                  width: 50,
+                  errorBuilder: (
+                      context,
+                      error,
+                      stackTrace
+                      ) => Icon(Icons.broken_image),
+                )
+                    : const Icon(Icons.image),
 
               );
 
