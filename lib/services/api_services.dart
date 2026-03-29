@@ -1,36 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:inovation_ib/Models/Product.dart';
 
-class Product {
-  final int id;
-  final String name;
-  final String description;
-  final double price;
-  final int stock;
-  final String? imageUrl;
-
-  Product({
-    required this.id,
-    required this.name,
-    required this.description,
-    required this.price,
-    required this.stock,
-    required this.imageUrl,
-  });
-
-  factory Product.fromJson(Map<String, dynamic> json) {
-    return Product(
-      id: json['id'],
-      name: json['name'],
-      description: json['description'],
-      price: (json['price'] is num
-          ? (json['price'] as num).toDouble()
-          : double.tryParse(json['price'].toString()) ?? 0.0),
-      stock: json['stock'] as int,
-      imageUrl: json['image'],
-    );
-  }
-}
 
 class ApiService {
   final String baseUrl = 'http://10.0.2.2:8000/api';

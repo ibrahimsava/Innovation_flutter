@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'api_services.dart';
+import 'package:inovation_ib/Models/Product.dart';
+
 
 
 class ProductListPage extends StatefulWidget {
