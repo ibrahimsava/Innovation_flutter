@@ -22,7 +22,7 @@ class _ProductListPageState extends State<ProductListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Produits')),
+      appBar: AppBar(title: Center( child:  Text('Produits'))),
       body: FutureBuilder<List<Product>>(
         future: products,
         builder: (context, snapshot) {
@@ -40,7 +40,21 @@ class _ProductListPageState extends State<ProductListPage> {
                 title: Text(p.name),
                 subtitle: Text(p.description),
                 trailing: Text('${p.price.toStringAsFixed(2)} €'),
+                  leading: p.imageUrl != null
+                      ?
+                 Image.network(
+                    p.imageUrl!,
+                    width: 50,
+                    errorBuilder: (
+                        context,
+                        error,
+                        stackTrace
+                        ) => Icon(Icons.broken_image),
+                  )
+                      : const Icon(Icons.image),
+
               );
+
             },
           );
         },

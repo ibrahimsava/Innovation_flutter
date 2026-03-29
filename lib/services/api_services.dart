@@ -7,6 +7,7 @@ class Product {
   final String description;
   final double price;
   final int stock;
+  final String? imageUrl;
 
   Product({
     required this.id,
@@ -14,6 +15,7 @@ class Product {
     required this.description,
     required this.price,
     required this.stock,
+    required this.imageUrl,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -25,6 +27,7 @@ class Product {
           ? (json['price'] as num).toDouble()
           : double.tryParse(json['price'].toString()) ?? 0.0),
       stock: json['stock'] as int,
+      imageUrl: json['image'],
     );
   }
 }
