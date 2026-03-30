@@ -64,54 +64,94 @@ class _HomeState extends State<Home> {
           height: 500,
           decoration: BoxDecoration(
             color: Colors.grey[100],
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(50),
-              topLeft: Radius.circular(50),
-            )
           ),
-              child: Padding(
-                padding: EdgeInsets.only(
-                  top: 80,
-                  left: 140,
-                  right: 50,
-
-                ),
-                  child:
-              Column(
-                children: [
-                  Row(
-                      children: [
-                  Text("Menu Rapide"),
-                  SizedBox(width: 5,),
-                  Icon(Icons.info)
-                  ]
+                  child: Padding(padding:
+                  EdgeInsetsGeometry.only(
+                   top: 100,
+                   left: 100,
                   ),
-                  SizedBox(height: 50,),
-                  Row(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        children: [
-                          Icon(Icons.eleven_mp),
-                          Text("data")
-                        ],
-                      ),
-                      SizedBox(width: 5,),
-                      Icon(Icons.eleven_mp),
-                      Text("data"),
+                    Text("Menu Rapide",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                      SizedBox(width: 10,),
+                      Icon(Icons.outbond_outlined)
+              ],
+                  ),
+            ),
+              ),
 
+              )
 
-                    ],
-                  )
-
+            ),
+            Positioned(
+              top: 600,
+              left: 0,   // INDISPENSABLE pour la symétrie
+              right: 0,  // INDISPENSABLE pour la symétrie
+              child: Row(
+                // Distribue l'espace uniformément entre les éléments
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _buildMenuIcon(Icons.book_online_rounded, "Booking"),
+                  _buildMenuIcon(Icons.money, "UnPix Money"),
+                  _buildMenuIcon(Icons.account_balance, "Puissa data"),
+                  _buildMenuIcon(Icons.add_a_photo, "Dompet"),
                 ],
               ),
-              ),
+            ),
+            Positioned(
+                right: 120,
+                left: 15,
+                bottom: 20,
+                child:
+                Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.blue[600],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
 
-    )
+                    child:
+                      Text("Login",
+                        style: TextStyle(
+                          color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 28,
+                        ),
+
+                  ),
+                  )
+
+                )
+            ),
+            Positioned(
+              bottom: 20,
+                right: 30,
+                left: 300,
+
+                child: Container(
+                  height: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.blue[500],
+                      borderRadius: BorderRadius.circular(20),
+                ),
+                  child: Icon(Icons.qr_code_scanner,
+                  color: Colors.white,
+                  size: 40,),
+
+            ),
             )
 
-            )
-              ]
+          ],
+
+
+
 
             )
            );
@@ -151,5 +191,35 @@ class MyCustomClipper extends CustomClipper<Path> {
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
 
+
+
+  // Fonction pour créer une icône de menu rapidement
+ Widget _buildMenuIcon(IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(15),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                  Colors.white, // Couleur de départ
+                    Colors.blue[100]!, // Couleur d'arrivée
+                  ],
+              ),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, spreadRadius: 1)
+              ]
+          ),
+          child: Icon(icon, size: 30, color: Colors.blueAccent),
+        ),
+        const SizedBox(height: 8),
+        Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
+      ],
+    );
+  }
 
 
