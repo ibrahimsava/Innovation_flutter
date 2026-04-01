@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -9,9 +10,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-
-
 
 
   @override
@@ -66,7 +64,7 @@ class _HomeState extends State<Home> {
             color: Colors.grey[100],
           ),
                   child: Padding(padding:
-                  EdgeInsetsGeometry.only(
+                  EdgeInsets.only(
                    top: 100,
                    left: 100,
                   ),
@@ -134,6 +132,11 @@ class _HomeState extends State<Home> {
               bottom: 20,
                 right: 30,
                 left: 300,
+                child: InkWell(
+                  onTap: (){
+                   Navigator.pushNamed(context, '/home_s');
+                  },
+
 
                 child: Container(
                   height: 60,
@@ -147,6 +150,7 @@ class _HomeState extends State<Home> {
 
             ),
             )
+            ),
 
           ],
 

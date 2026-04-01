@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:inovation_ib/pages/Articles.dart';
 import 'package:inovation_ib/pages/Home.dart';
 import 'package:inovation_ib/pages/HomePage.dart';
-import 'package:inovation_ib/pages/products.dart';
-import 'package:inovation_ib/pages/Home.dart';
+import 'package:inovation_ib/pages/Home_s.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,10 +19,12 @@ class MyApp extends StatelessWidget {
            scaffoldBackgroundColor: Colors.blue[600],
          ),
         debugShowCheckedModeBanner: false,
-        home: Home(),
+          home: Home(),
           initialRoute: '/',
           routes: {
-            '/about': (context) => Articles(),
+             '/home': (context)=> const Home(),
+            '/home_s': (context) => const Home_s(),
+
           },
 
       
