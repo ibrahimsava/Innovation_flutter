@@ -20,7 +20,7 @@ class _Home_sState extends State<Home_s> {
             child: IconButton(
               icon: const Icon(Icons.arrow_back_ios,
                   color: Colors.white,
-                   size: 30,          ),
+                   size: 29,          ),
               onPressed: () {
                 // Cette commande permet de revenir à la page Home
                 Navigator.pop(context);
