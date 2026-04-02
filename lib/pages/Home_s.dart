@@ -11,6 +11,82 @@ class _Home_sState extends State<Home_s> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
+      // 2. La barre de navigation avec les éléments à gauche et à droite
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        shape: const CircularNotchedRectangle(), // Crée l'encoche pour le bouton
+        notchMargin: 8.0, // Espace entre le bouton et la barre
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween, // Écarte les éléments
+          children: [
+            // Groupe de gauche
+            Row(
+              children: [
+                IconButton(icon: const Icon(Icons.home,
+                size: 40,),
+                    onPressed: () {}),
+                IconButton(icon: const Icon(Icons.search,
+                  size: 40,),
+                    onPressed: () {}),
+              ],
+            ),
+            // Groupe de droite
+            Row(
+              children: [
+                IconButton(icon: const Icon(Icons.notifications,
+                  size: 40,),
+                    onPressed: () {}),
+                IconButton(icon: const Icon(Icons.person,
+                  size: 40,),
+                    onPressed: () {}),
+              ],
+            ),
+          ],
+        ),
+      ),
+
+
+      // 1. Positionnement au centre en bas
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/home_t');
+        },
+        elevation: 10, // Désactive l'ombre par défaut qui cause problème
+        backgroundColor: Colors.transparent,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.blue, // Couleur du bouton
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.blue.withOpacity(0.4),
+                spreadRadius: 4,
+                blurRadius: 10,
+                offset: Offset(0, 4),
+              ),
+            ],
+          ),
+
+
+
+
+
+
+
+
+
+
+          child: Center(child:
+          Icon(Icons.qr_code_scanner,
+              color: Colors.white)),
+        ),
+      ),
+
+
       body: Stack(
         children: [
           // 1. LE BOUTON DE RETOUR MANUEL (Indispensable sans AppBar)
@@ -119,7 +195,7 @@ class _Home_sState extends State<Home_s> {
             ),
           ),
           Positioned(
-            top: 500,
+            top: 440,
               left: 5,
               child: Column(
                 children: [
@@ -190,7 +266,7 @@ class _Home_sState extends State<Home_s> {
               )
           ),
       Positioned(
-        top: 500,
+        top: 440,
         right: 10,
         left: 250,
         child: Column(
@@ -237,7 +313,7 @@ class _Home_sState extends State<Home_s> {
       ),
 
           Positioned(
-            top: 640,
+            top: 565,
             left: 10,
             right: 10,
             child: Row(
@@ -265,7 +341,7 @@ class _Home_sState extends State<Home_s> {
 
 
           Positioned(
-              top: 680 ,
+              top: 600 ,
               left: 20,
               right: 20,
               child: Container(
@@ -288,7 +364,7 @@ class _Home_sState extends State<Home_s> {
                                 Icon(Icons.arrow_downward, color: Colors.green),
                                 SizedBox(height: 5),
                                 Text("Pemasukan"),
-                                Text("Rp0", style: TextStyle(fontWeight: FontWeight.bold)),
+
                               ],
                             ),
                           ),
@@ -308,7 +384,7 @@ class _Home_sState extends State<Home_s> {
                                 Icon(Icons.arrow_upward, color: Colors.red),
                                 SizedBox(height: 5),
                                 Text("Pengeluaran"),
-                                Text("Rp0", style: TextStyle(fontWeight: FontWeight.bold)),
+
                               ],
                             ),
                           ),
@@ -331,13 +407,10 @@ class _Home_sState extends State<Home_s> {
                         ),
                       ),
                     ),
-
                   ],
                 ),
               )
           ),
-
-
         ],
       ),
     );
