@@ -106,8 +106,12 @@ class _HomeState extends State<Home> {
                 right: 120,
                 left: 15,
                 bottom: 20,
-                child:
-                Container(
+                child: InkWell(
+                onTap: (){
+             Navigator.pushNamed(context, '/login');
+                        },
+                 child:
+                      Container(
                   height: 60,
                   decoration: BoxDecoration(
                     color: Colors.blue[600],
@@ -115,7 +119,8 @@ class _HomeState extends State<Home> {
                   ),
                   child: Center(
 
-                    child:
+
+                   child:
                       Text("Login",
                         style: TextStyle(
                           color: Colors.white,
@@ -124,6 +129,7 @@ class _HomeState extends State<Home> {
                         ),
 
                   ),
+                  )
                   )
 
                 )
