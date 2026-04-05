@@ -5,6 +5,7 @@ import 'package:inovation_ib/pages/HomePage.dart';
 import 'package:inovation_ib/pages/Home_s.dart';
 import 'package:inovation_ib/pages/home_t.dart';
 import 'package:inovation_ib/pages/login_page.dart';
+import 'package:inovation_ib/pages/register.dart';
 void main() {
   runApp(const MyApp());
   
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
             '/home_s': (context) => const Home_s(),
             '/home_t': (context) => const HomeT(),
             '/login': (context)=> const LoginPage(),
+            '/register': (context)=> const Register(),
 
           },
 

@@ -68,7 +68,12 @@ class _HomeState extends State<Home> {
                    top: 100,
                    left: 100,
                   ),
-                  child: Row(
+
+                  child: InkWell(
+                     onTap: (){
+                       Navigator.pushNamed(context, '/register');
+                     },
+                    child:  Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                     Text("Menu Rapide",
@@ -80,6 +85,7 @@ class _HomeState extends State<Home> {
                       SizedBox(width: 10,),
                       Icon(Icons.outbond_outlined)
               ],
+                  ),
                   ),
             ),
               ),
@@ -110,8 +116,8 @@ class _HomeState extends State<Home> {
                 onTap: (){
              Navigator.pushNamed(context, '/login');
                         },
-                 child:
-                      Container(
+        child:
+        Container(
                   height: 60,
                   decoration: BoxDecoration(
                     color: Colors.blue[600],
@@ -119,7 +125,7 @@ class _HomeState extends State<Home> {
                   ),
                   child: Center(
 
-
+                  
                    child:
                       Text("Login",
                         style: TextStyle(

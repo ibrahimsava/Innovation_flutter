@@ -35,7 +35,11 @@ class _LoginPageState extends State<LoginPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text("Please Enter yours !")
+                  Text("Please Enter yours !",
+                  style: TextStyle(
+                    fontSize:  14,
+                    fontWeight: FontWeight.bold,
+                  ),)
                 ],
               )
           ),
@@ -45,13 +49,72 @@ class _LoginPageState extends State<LoginPage> {
                 top:  250,
                 left: 0,
                 right: 0,
-                bottom: 0,
+                bottom: 100,
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20)
                 ),
+                 child: SingleChildScrollView( child:  Column(
+                   children: [
+                     Padding(padding: EdgeInsets.all(15)),
+                     Text("Entrez votre email",
+                     style: TextStyle(
+                       fontSize: 14,
+                     ),),
+                     SizedBox(height: 5,),
 
+                     SizedBox(
+                       width: 280,
+                       child: TextField(
+                       obscureText: true,
+                       decoration: InputDecoration(
+                         labelText: " Email",
+                         prefixIcon: Icon(Icons.email),
+                         enabledBorder: OutlineInputBorder(
+                           borderRadius: BorderRadius.circular(40),
+                           borderSide: BorderSide(width: 3)
+                         ),
+                         focusedBorder: OutlineInputBorder(
+                         ),
+                       ),
+                     )
+                     ),
+                     SizedBox(height: 5,),
+                     Text("Entrez votre mot de pass",),
+
+                    SizedBox( width: 280, child:  TextField(
+                      obscureText: true,
+                       decoration: InputDecoration(
+                         labelText: "Passwords",
+                         prefixIcon: Icon(Icons.password),
+                         enabledBorder: OutlineInputBorder(
+                             borderRadius: BorderRadius.circular(40),
+                             borderSide: BorderSide(width: 3)
+                         ),
+                         focusedBorder: OutlineInputBorder(
+                         ),
+                       ),
+                     ),
+                    ),
+                     SizedBox(height: 40,),
+
+                    TextButton(
+                       style: ElevatedButton.styleFrom(
+                         backgroundColor: Colors.blue,
+                       ),
+                       onPressed: ()=> Navigator.pop(context),
+                    child:  Text( "Click pour s'enregistrez",
+                     style: TextStyle(
+                       fontWeight: FontWeight.bold,
+                       fontSize: 16,
+                       color: Colors.black
+                     )
+                       ,)
+                     )
+
+                   ],
+                 ),)
               )
           )
 
