@@ -160,7 +160,7 @@ class _RestaurantState extends State<Restaurant> {
               SizedBox(width: 10,),
           Image.asset('assets/images/restaurant_image.jpg', height: 200),
           ],
-          )
+          ),
             ]
           ))
 
