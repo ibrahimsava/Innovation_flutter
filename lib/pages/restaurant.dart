@@ -162,7 +162,8 @@ class _RestaurantState extends State<Restaurant> {
           ],
           ),
             ]
-          ))
+          ),
+          )
 
         ],
 
